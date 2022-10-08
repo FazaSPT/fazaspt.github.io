@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- BOOTSTRAP ICON -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- LOCAL CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -48,7 +50,7 @@
     <section class="jumbotron text-center">
         <img src="img/profile.png" alt="Faza Saputra" width="200" class="rounded-circle img-thumbnail">
         <h1 class="display-4">Faza Saputra</h1>
-        <p class="lead"><span class="auto-type"></span></p>
+        <p class="lead"></p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#fff" fill-opacity="1"
                 d="M0,96L48,80C96,64,192,32,288,64C384,96,480,192,576,240C672,288,768,288,864,250.7C960,213,1056,139,1152,90.7C1248,43,1344,21,1392,10.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -59,18 +61,18 @@
 
     <!-- ABOUT -->
     <section id="about">
-        <div class="container">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
             <div class="row text-center mb-5">
                 <div class="col">
                     <h2>About Me</h2>
                 </div>
             </div>
             <div class="row justify-content-center fs-5 text-center">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime fuga, sed inventore nemo
                         suscipit. Vero temporibus asperiores aliquid illum.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt in eveniet aut blanditiis
                         ipsam officiis, dolorum saepe odio hic nostrum! Delectus aliquam inventore eveniet!</p>
                 </div>
@@ -88,12 +90,12 @@
     <section id="projects">
         <div class="container">
             <div class="row text-center mb-3">
-                <div class="col mb-3">
+                <div class="col mb-3" data-aos="fade-down" data-aos-duration="1200">
                     <h2>My Projects</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="fade-right" data-aos-duration="1200">
                     <div class="card">
                         <img src="img/port1.jpg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
@@ -102,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="100">
                     <div class="card">
                         <img src="img/port2.jpg" class="card-img-top" alt="Project 2">
                         <div class="card-body">
@@ -111,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
                     <div class="card">
                         <img src="img/port3.jpg" class="card-img-top" alt="Project 3">
                         <div class="card-body">
@@ -129,6 +131,40 @@
         </svg>
     </section>
     <!-- END PROJECTS -->
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="container">
+            <div class="row text-center mb-3">
+                <div class="col">
+                    <h2>Gallery</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="">
+                        <img src="img/gallery/g1.jpg" alt="Image 1" class="img-fluid gallery-img">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="">
+                        <img src="img/gallery/g2.jpg" alt="Image 2" class="img-fluid gallery-img">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="">
+                        <img src="img/gallery/g3.jpg" alt="Image 3" class="img-fluid gallery-img">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="">
+                        <img src="img/gallery/g4.jpg" alt="Image 4" class="img-fluid gallery-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END GALLERY -->
 
     <!-- CONTACT -->
     <section id="contact">
@@ -168,13 +204,35 @@
 
     <!-- FOOTER -->
     <footer class="bg-primary text-white text-center pb-3   ">
-        <p>Created with <i class="bi bi-suit-heart-fill text-danger"></i> by <a href="#" class="text-white fw-bold">Faza Saputra</a></p>
+        <p>Created with <i class="bi bi-suit-heart-fill text-danger"></i> by <a href="#" class="text-white fw-bold">Faza
+                Saputra</a></p>
     </footer>
     <!-- END FOOTER -->
 
-    <!-- JS BOOTSTRAP -->
+    <!-- ALL JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        const galleryImage = document.querySelectorAll('.gallery-img');
+
+        galleryImage.forEach((img, i) => {
+            img.dataset.aos = 'fade-down';
+            img.dataset.aosDelay = i * 100;
+            img.dataset.aosDuration = 1000;
+        });
+        AOS.init();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin(TextPlugin);
+        gsap.to('.lead', { duration: 2, delay: 1.5, text: 'Freelancer | Software Engineer' });
+        gsap.from('.jumbotron img', {duration: 1, y:-100, opactity: 0, ease: 'bounce'});
+        gsap.from('.navbar', { duration: 1.5, y: '-100%', opactity: 0, ease: 'bounce' });
+        gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
+    </script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
